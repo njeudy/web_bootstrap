@@ -225,7 +225,7 @@ body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 20px;
+ /* line-height: 20px;*/
   color: #333333;
   background-color: #ffffff;
 }
@@ -723,7 +723,7 @@ h6 {
   margin: 10px 0;
   font-family: inherit;
   font-weight: bold;
-  line-height: 20px;
+/*  line-height: 20px;*/
   color: inherit;
   text-rendering: optimizelegibility;
 }
@@ -739,6 +739,7 @@ h6 small {
   color: #999999;
 }
 
+/*
 h1,
 h2,
 h3 {
@@ -760,7 +761,7 @@ h3 {
 h4 {
   font-size: 17.5px;
 }
-
+*/
 h5 {
   font-size: 14px;
 }
@@ -805,7 +806,7 @@ ol ul {
 }
 
 li {
-  line-height: 20px;
+ /* line-height: 20px; */
 }
 
 ul.unstyled,
@@ -1038,7 +1039,7 @@ select,
 textarea {
   font-size: 14px;
   font-weight: normal;
-  line-height: 20px;
+/*  line-height: 20px; */
 }
 
 input,
@@ -5540,7 +5541,7 @@ a.thumbnail:hover {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   white-space: nowrap;
   vertical-align: baseline;
-  background-color: #999999;
+/*  background-color: #999999; */
 }
 
 .label {

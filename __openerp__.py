@@ -10,12 +10,12 @@
     "data": [
     ],
     "css": [
-        'static/src/bootstrap/css/bootstrap.min.css',
+        'static/src/bootstrap/css/bootstrap.css',
         'static/src/bootstrap/css/bootstrap-responsive.min.css',
         'static/src/css/base.css',
     ],
     "js": [
-        'static/src/bootstrap/js/bootstrap.min.js'
+        'static/src/bootstrap/js/bootstrap.min.js',
     ],
     "sequence": 90,
 }
