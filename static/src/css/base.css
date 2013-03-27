@@ -11,3 +11,8 @@ label {
 
 	color: white;
 }
+.openerp .oe_form .oe_form_embedded_html {
+
+	width: none;
+	margin-left: 0px;
+}
