@@ -13,6 +13,6 @@ label {
 }
 .openerp .oe_form .oe_form_embedded_html {
 
-	width: none;
+	width: 100%;
 	margin-left: 0px;
 }
