@@ -16,3 +16,32 @@ label {
 	width: 100%;
 	margin-left: 0px;
 }
+
+.openerp .oe_form_sheet_width {
+
+	min-width: 650px;
+	max-width: 92%;
+	margin: 0 auto;
+}
+
+.openerp .oe_mail_wall .oe_mail {
+
+	margin: 16px;
+	width: auto;
+}
+
+.openerp .oe_form div.oe_chatter {
+
+	max-width: 100%;
+}
+
+.openerp .oe_followers {
+
+width: 200px;
+
+}
+
+.openerp .oe_record_thread {
+	
+	margin-right: 252px;
+}
