@@ -46,3 +46,7 @@ label {
 .openerp .oe_secondary_submenu .oe_menu_toggler:before {
 	color:white;
 }
+
+.openerp .oe_application .btn {
+	color:white;
+}
