@@ -2,30 +2,25 @@
 /* openerp base style modification */
 
 label {
-
   display: inline-block;
   
 }
 
 .openerp .oe_application .label a {
-
 	color: white;
 }
 .openerp .oe_form .oe_form_embedded_html {
-
 	width: 100%;
 	margin-left: 0px;
 }
 
 .openerp .oe_form_sheet_width {
-
 	min-width: 650px;
 	max-width: 92%;
 	margin: 0 auto;
 }
 
 .openerp .oe_mail_wall .oe_mail {
-
 	margin: 16px;
 	width: auto;
 }
@@ -36,12 +31,18 @@ label {
 }
 
 .openerp .oe_followers {
+	width: 200px;
+}
 
-width: 200px;
 
+.openerp .oe_form .oe_inline {
+	width: auto;
 }
 
 .openerp .oe_record_thread {
-	
 	margin-right: 252px;
+}
+
+.openerp .oe_secondary_submenu .oe_menu_toggler:before {
+	color:white;
 }

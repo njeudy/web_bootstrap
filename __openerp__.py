@@ -16,6 +16,8 @@
     ],
     "js": [
         'static/src/bootstrap/js/bootstrap.min.js',
+        'static/src/bootstrap/js/holder.js',
+        'static/src/js/form.js',
     ],
     "sequence": 90,
 }
