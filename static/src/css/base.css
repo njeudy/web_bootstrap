@@ -9,6 +9,15 @@ label {
 .openerp .oe_application .label a {
 	color: white;
 }
+
+.openerp .oe_leftbar {
+
+    background: url(/web_bootstrap/static/src/img/background_grey.png) #F0EEEE;
+    -moz-box-shadow: inset 0 5px 5px #222;
+    -webkit-box-shadow: inset 0 5px 5px#222;
+    box-shadow: inset 0 5px 5px #222;
+}
+
 .openerp .oe_form .oe_form_embedded_html {
 	width: 100%;
 	margin-left: 0px;
@@ -49,4 +58,30 @@ label {
 
 .openerp .oe_application .btn {
 	color:white;
+}
+
+.ui-autocomplete {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.ui-autocomplete li { 
+	background: #232327;
+    background: rgba(0, 0, 0, 0.8);
+    border: 0px solid lightGrey;
+    text-shadow: none;
+    margin: 5px;
+    padding: 5px;
+    color: white;
+     -moz-box-shadow: inset 0 5px 5px #222;
+    -webkit-box-shadow: inset 0 5px 5px#222;
+    box-shadow: inset 0 5px 5px #222;
+}
+
+.ui-autocomplete a{ 
+	color: #222222;
+	background-color: white;
+}
+
+.ui-autocomplete em {
+	font-weight: bold;
 }
