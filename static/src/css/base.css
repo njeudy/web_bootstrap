@@ -48,6 +48,10 @@ label {
 	width: auto;
 }
 
+.openerp .oe_form .oe_inline .oe_form_field {
+	width: 100%;
+}
+
 .openerp .oe_record_thread {
 	margin-right: 252px;
 }

@@ -10,17 +10,6 @@ openerp.web_bootstrap = function (oe) {
     _t  = oe.web._t,
     _lt = oe.web._lt;
 
-
-    /**
-     * Miscellanious functions
-     */
-
-
-    /**
-     * Widget code
-     */
-
-    debugger;
     oe.web.views.add('form', 'openerp.web_bootstrap.FormView');
     oe.web_bootstrap.FormView = oe.web.FormView.extend({
 
@@ -29,11 +18,9 @@ openerp.web_bootstrap = function (oe) {
 
             var self = this;
             this._super.apply(this, arguments);
-            debugger;
             Holder.run();
         }
     });
-
 };
 
 // vim:et fdc=0 fdl=0:
