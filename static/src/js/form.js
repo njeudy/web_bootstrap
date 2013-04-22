@@ -1,8 +1,3 @@
-/*---------------------------------------------------------
- * OpenERP web_google_chart
- *---------------------------------------------------------*/
-google_jsapi_loaded = false; 
-google_visualization_loaded = false;
 
 openerp.web_bootstrap = function (oe) {
 
@@ -23,4 +18,3 @@ openerp.web_bootstrap = function (oe) {
     });
 };
 
-// vim:et fdc=0 fdl=0:
