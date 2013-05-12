@@ -12,9 +12,14 @@ openerp.web_bootstrap = function (oe) {
         load_form: function() {
 
             var self = this;
-            this._super.apply(this, arguments);
-            Holder.run();
+            return $.when(this._super.apply(this, arguments)).then(function() {
+                Holder.run();
+                self.$el.find('.dropdown-toggle').dropdown();
+                debugger;
+                self.$el.find('.carousel').carousel();
+  	    });
         }
+
     });
 };
 
