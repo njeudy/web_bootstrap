@@ -15,7 +15,6 @@ openerp.web_bootstrap = function (oe) {
             return $.when(this._super.apply(this, arguments)).then(function() {
                 Holder.run();
                 self.$el.find('.dropdown-toggle').dropdown();
-                debugger;
                 self.$el.find('.carousel').carousel();
   	    });
         }
