@@ -115,3 +115,36 @@ label {
 .openerp .oe_form_nosheet {
     margin: 0px;
 }
+.openerp .oe_topbar_avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.openerp .oe_menu_more_link {
+    height: 24px;
+    display: block;
+    padding: 10px 10px;
+}
+
+ .openerp .oe_user_menu {
+    height: 24px;
+    display: block;
+    padding: 5px 10px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+body {
+  padding-top: 40px;
+}
+
+.oe_calendar{
+  padding: 20px;
+} 
+
+.openerp .oe_form_nosheet {
+    margin: 10px;
+}

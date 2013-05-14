@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim:fdl=1:
+-->
+<templates id="template" xml:space="preserve">
+<t t-name="Menu">
+            <ul class="nav nav-pills" t-if="widget.data">
+                <li t-foreach="widget.data.data.children" t-as="menu" class="dropdown" t-att-data-menu-parent="menu.id">
+                    <t t-if="menu.children.length" t-call="Menu.link.dd"/>
+                     <t t-if="!menu.children.length" t-call="Menu.link"/>
+                    <ul t-if="menu.children.length" class="dropdown-menu">
+                        <t t-foreach="menu.children" t-as="menu">
+                            <t t-if="menu.children.length">
+                                <li class="nav-header">
+                                    <t t-call="Menu.link"/>
+                                </li>
+                                <t t-call="Menu.secondary.submenu"/>
+                            </t>
+                            <t t-if="!menu.children.length">
+                                <li >
+                                    <t t-call="Menu.link"/>
+                                </li>
+                            </t>
+                        </t>
+                    </ul>
+                </li>
+                
+            </ul>
+</t>
+
+<t t-name="Menu.secondary">
+    <div t-foreach="widget.data.data.children" t-as="menu" style="display: none" class="oe_secondary_menu" t-att-data-menu-parent="menu.id">
+        <t t-foreach="menu.children" t-as="menu">
+            <div class="oe_secondary_menu_section">
+                <!-- restore menu link
+                <t t-esc="menu.name"/>
+                -->
+                <t t-call="Menu.link"/>
+            </div>
+            <t t-call="Menu.secondary.submenu"/>
+        </t>
+    </div>
+</t>
+<t t-name="Menu.secondary.submenu">
+    <!--<ul t-if="menu.children.length" class="dropdown-submenu">-->
+    <t t-foreach="menu.children" t-as="menu">
+        <li t-if="menu.children.length" class="dropdown-submenu" t-as="menu">
+            <t t-call="Menu.link"/>
+            <!--<span class="oe_menu_label">8</span>-->
+            <t t-call="Menu.secondary.submenu.sub"/>
+        </li>
+        <li t-if="!menu.children.length" t-as="menu">
+            <t t-call="Menu.link"/>
+        </li>
+    </t>
+    <!--</ul>-->
+</t>
+
+<t t-name="Menu.secondary.submenu.sub">
+    <ul t-if="menu.children.length" class="dropdown-menu">
+        <li t-foreach="menu.children" t-as="menu">
+            <t t-call="Menu.link"/>
+            <!--<span class="oe_menu_label">8</span>-->
+            <t t-call="Menu.secondary.submenu"/>
+        </li>
+    </ul>
+</t>
+
+<t t-name="Menu.link.dd">
+    <a  t-attf-href="#"
+        class="dropdown-toggle"
+        data-toggle="dropdown"
+        t-att-data-menu="menu.id"
+        t-att-title="menu.name"
+        t-att-data-action-model="menu.action ? menu.action.split(',')[0] : ''"
+        t-att-data-action-id="menu.action ? menu.action.split(',')[1] : ''">
+            <t t-esc="menu.name"/><b class="caret"></b>
+    </a>
+</t>
+
+<t t-name="Menu.link">
+    <a  t-attf-href="#menu_id=#{menu.id}&amp;action=#{menu.action ? menu.action.split(',')[1] : ''}"
+        t-att-data-menu="menu.id"
+        t-att-title="menu.name"
+        t-att-data-action-model="menu.action ? menu.action.split(',')[0] : ''"
+        t-att-data-action-id="menu.action ? menu.action.split(',')[1] : ''">
+            <t t-esc="menu.name"/>
+    </a>
+</t>
+
+<t t-name="WebClient">
+    <div class="openerp openerp_webclient_container container-fluid">
+<!--    <table class="oe_webclient">
+        <tr>
+            <td colspan="2" class="oe_topbar"> -->
+        <div class="row-fluid">
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="nav-collapse collapse">
+                    <div class="oe_menu_placeholder"/>
+                    <div class="oe_user_menu_placeholder"/>
+                    <div class="oe_systray"/>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+<!--            </td>
+        </tr>
+        <tr>
+            <td class="oe_leftbar" valign="top">
+                <t t-set="debug" t-value="__debug__ ? '&amp;debug' : ''"/>
+                <a class="oe_logo" t-attf-href="/?ts=#{Date.now()}#{debug}">
+                    <span class="oe_logo_edit">Edit Company data</span>
+                    <img t-att-src='widget.session.url("/web/binary/company_logo")'/>
+                </a>
+                <div class="oe_secondary_menus_container"/>
+                <div class="oe_footer">
+                    Powered by <a href="http://www.openerp.com" target="_blank"><span>OpenERP</span></a>
+                </div>
+            </td>-->
+        <div class="row-fluid">
+            <div class="oe_application">
+            </div>
+        </div>
+     <!--   </tr>
+    </table>-->
+    </div>
+</t>
+</templates>
