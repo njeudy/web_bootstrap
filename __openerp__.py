@@ -17,7 +17,10 @@
     "js": [
         'static/src/bootstrap/js/bootstrap.min.js',
         'static/src/bootstrap/js/holder.js',
-        'static/src/js/form.js',
+        'static/src/js/*.js',
+    ],
+    "qweb": [
+	'static/src/xml/*.xml',
     ],
     "sequence": 90,
 }
