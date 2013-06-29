@@ -157,3 +157,7 @@ body {
   height: 500px;
   padding: 0px;
 }
+
+.openerp .oe_searchview {
+  width: 100%;
+}
