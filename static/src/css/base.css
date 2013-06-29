@@ -148,3 +148,12 @@ body {
 .openerp .oe_form_nosheet {
     margin: 10px;
 }
+
+.openerp table {
+  width:100%;
+}
+
+.process_canvas svg {
+  height: 500px;
+  padding: 0px;
+}
