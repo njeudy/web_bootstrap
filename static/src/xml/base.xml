@@ -93,7 +93,7 @@
         <tr>
             <td colspan="2" class="oe_topbar"> -->
         <div class="row-fluid">
-        <div class="navbar navbar-fixed-top">
+        <div class="navbar navbar-fixed-top oe_secondary_menus_container">
             <div class="navbar-inner">
             <div class="container">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
