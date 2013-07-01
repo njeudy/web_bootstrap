@@ -41,9 +41,10 @@ openerp.web_bootstrap = function (oe) {
 
           // Hide second level submenus
           this.$secondary_menus.find('.oe_menu_toggler').siblings('.oe_secondary_submenu').hide();
-          if (self.current_menu) {
-              self.open_menu(self.current_menu);
-          }
+          // NJEUDY: remove buggy current menu with bootstrap.
+          //if (self.current_menu) {
+          //    self.open_menu(self.current_menu);
+          //}
           this.trigger('menu_loaded', data);
           this.has_been_loaded.resolve();
       }, 
