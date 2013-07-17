@@ -231,13 +231,13 @@ body {
         text-align: justify; }
 
 .openerp .oe_login {
-    background-image: url("/web_bootstrap/static/src/img/background_grey.png");
+    background-image: url("/web_bootstrap/static/src/img/background_linen.png");
 }
 
 body .openerp .menu_grey  {
     background: #1e1e1e;
     background: rgba(30, 30, 30, 0.94);
-    background-image: url("/web_bootstrap/static/src/img/background_grey.png");
+    background-image: url("/web_bootstrap/static/src/img/background_linen.png");
     color: #eeeeee;
     text-align: left;
     -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9);

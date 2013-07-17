@@ -25,6 +25,10 @@ openerp.web_bootstrap = function (oe) {
       start: function() {
           this._super.apply(this, arguments);
           this.$secondary_menus = this.getParent().$el.find('.oe_secondary_menus_container2');
+          this.$primary_menus = this.getParent().$el.find('.navbar_menus_container');
+          this.$primary_menus.on('click', 'a[data-menu]', this.on_menu_click);
+          this.$test = this.getParent().$el.find('.oe_secondary_menus_container2');
+          this.$test.on('click', 'a[data-menu]', this.on_menu_click);
           //NJEUDY: remove onclick action
           //this.$secondary_menus.on('click', 'a[data-menu]', this.on_menu_click);
 
@@ -65,7 +69,7 @@ openerp.web_bootstrap = function (oe) {
         this.trigger('open_menu', id, $clicked_menu);
 
         if (this.$secondary_menus.has($clicked_menu).length) {
-            $sub_menu = $clicked_menu.parents('.oe_secondary_menu');
+            $sub_menu = $clicked_menu.parents('.oe_secondary_menu2');
             $main_menu = this.$el.find('a[data-menu=' + $sub_menu.data('menu-parent') + ']');
         } else {
             $sub_menu = this.$secondary_menus.find('.oe_secondary_menu2[data-menu-parent=' + $clicked_menu.attr('data-menu') + ']');
@@ -87,9 +91,9 @@ openerp.web_bootstrap = function (oe) {
         this.$secondary_menus.find('.oe_active').removeClass('oe_active');
         if ($main_menu !== $clicked_menu) {
             $clicked_panel_menu.parents().show();
-            $clicked_panel_menu.parents().find('.collapse').removeClass('in');
-            $clicked_panel_menu.siblings().addClass('collapse in');
-            $clicked_panel_menu.parents().addClass('in');
+            //$clicked_panel_menu.parents('ul').find('.collapse').removeClass('in');
+            //$clicked_panel_menu.siblings('ul').addClass('collapse in');
+            $clicked_panel_menu.parents('ul').addClass('in');
             $clicked_menu.parent().addClass('oe_active');
         }
     },
