@@ -15,9 +15,9 @@
         'static/src/css/base.css',
     ],
     "js": [
-        'static/src/bootstrap/js/bootstrap.min.js',
+#        'static/src/bootstrap/js/bootstrap.min.js',
         'static/src/bootstrap/js/holder.js',
-        'static/src/js/*.js',
+        'static/src/js/form.js',
     ],
     "qweb": [
 	'static/src/xml/*.xml',

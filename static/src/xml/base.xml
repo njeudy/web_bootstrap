@@ -23,7 +23,6 @@
                         </t>
                     </ul>
                 </li>
-                
             </ul>
 </t>
 
@@ -36,7 +35,7 @@
                 -->
                 <t t-call="Menu.link"/>
             </div>
-            <t t-call="Menu.secondary.submenu"/>
+           <!-- <t t-call="Menu.secondary.submenu"/>-->
         </t>
     </div>
 </t>
@@ -45,7 +44,7 @@
     <t t-foreach="menu.children" t-as="menu">
         <li t-if="menu.children.length" class="dropdown-submenu" t-as="menu">
             <t t-call="Menu.link"/>
-            <!--<span class="oe_menu_label">8</span>-->
+            <!--<span class="oe_menu_label">8</span> -->
             <t t-call="Menu.secondary.submenu.sub"/>
         </li>
         <li t-if="!menu.children.length" t-as="menu">
@@ -63,6 +62,45 @@
             <t t-call="Menu.secondary.submenu"/>
         </li>
     </ul>
+</t>
+
+<t t-name="Menu.secondary2">
+    <ul t-foreach="widget.data.data.children" t-as="menu" style="display: none" class="oe_secondary_menu2 nav nav-list" t-att-data-menu-parent="menu.id">
+        <t t-foreach="menu.children" t-as="menu">
+            <li class="oe_secondary_menu_section2" >
+                <t t-call="Menu.link2"/>
+                <t t-call="Menu.secondary.submenu2"/>
+            </li>
+            
+        </t>
+    </ul>
+</t>
+
+<t t-name="Menu.secondary.submenu2">
+    <ul t-if="menu.children.length" 
+        t-att-class="menu.children.length ? 'nav nav-list collapse nav-collapse-'+menu.id : 'nav navlist nav-collapse-'+ menu.id">
+        <li t-foreach="menu.children" t-as="menu" class="oe_secondary_menu_subsection2">
+            <t t-call="Menu.link2"/>
+            <t t-call="Menu.secondary.submenu2"/>
+        </li>
+    </ul>
+</t>
+
+<t t-name="Menu.link2">
+
+    <a  t-attf-href="#menu_id=#{menu.id}&amp;action=#{menu.action ? menu.action.split(',')[1] : ''}"
+        t-att-class="menu.children.length ? 'not_empty' : 'oe_menu_leaf'"
+        t-att-data-toggle="menu.children.length ? 'collapse' : ''"
+        t-att-data-menu="menu.id"
+        t-att-data-target="menu.children.length ? '.nav-collapse-'+menu.id : ''"
+        t-att-title="menu.name+'_2'"
+        t-att-data-action-model="menu.action ? menu.action.split(',')[0] : ''"
+        t-att-data-action-id="menu.action ? menu.action.split(',')[1] : ''">
+        <span class="oe_menu_text">
+            <t t-esc="menu.name"/>
+        </span>
+    </a>
+
 </t>
 
 <t t-name="Menu.link.dd">
@@ -87,56 +125,92 @@
     </a>
 </t>
 
-<t t-name="WebClient">
-    <div class="openerp openerp_webclient_container container-fluid">
-<!--    <table class="oe_webclient">
-        <tr>
-            <td colspan="2" class="oe_topbar"> -->
-        <div class="row-fluid">
-        <div class="navbar navbar-fixed-top oe_secondary_menus_container">
-            <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <div class="nav-collapse collapse">
-                    <div class="oe_menu_placeholder"/>
-                    <div class="oe_user_menu_placeholder"/>
-                    <div class="oe_systray"/>
+<t t-name="Login">
+    <div class="oe_login">
+        <div class="oe_login_error_message"/>
+        <div class="oe_login_pane">
+            <div class="oe_login_logo"></div>
+            <form action="" method="post">
+                <div class="oe_login_dbpane" >
+                    Database:
+                    <input name="db" t-att-value="widget.selected_db || ''"/>
                 </div>
+                <ul>
+                    <li>Username</li>
+                    <li><input name="login" type="text" value="" autofocus="autofocus"/></li>
+                    <li>Password</li>
+                    <li><input name="password" type="password" value=""/></li>
+                    <li><button name="submit">Log in</button></li>
+                </ul>
+            </form>
+            <div class="oe_login_footer">
+                <a href="http://www.tuxservices.com" target="_blank"><span>TuxServices</span></a> - <a href="http://www.openerp.com" target="_blank"><span>OpenERP</span></a>
             </div>
         </div>
-        </div>
-    </div>
-<!--            </td>
-        </tr>
-        <tr>
-            <td class="oe_leftbar" valign="top">
-                <t t-set="debug" t-value="__debug__ ? '&amp;debug' : ''"/>
-                <a class="oe_logo" t-attf-href="/?ts=#{Date.now()}#{debug}">
-                    <span class="oe_logo_edit">Edit Company data</span>
-                    <img t-att-src='widget.session.url("/web/binary/company_logo")'/>
-                </a>
-                <div class="oe_secondary_menus_container"/>
-                <div class="oe_footer">
-                    Powered by <a href="http://www.openerp.com" target="_blank"><span>OpenERP</span></a>
-                </div>
-            </td>-->
-        <div class="row-fluid">
-            <div class="oe_application">
-            </div>
-        </div>
-     <!--   </tr>
-    </table>-->
     </div>
 </t>
 
+<t t-name="UserMenu">
+    <span class="oe_user_menu oe_topbar_item oe_dropdown_toggle oe_dropdown_arrow">
+        <img class="oe_topbar_avatar" t-att-data-default-src="_s + '/web/static/src/img/user_menu_avatar.png'"/>
+        <span class="oe_topbar_name"/>
+        <ul class="oe_dropdown_menu">
+            <li><a href="#" data-menu="settings">Preferences</a></li>
+            <li><a href="#" data-menu="about">About OpenERP</a></li>
+            <li><a href="#" data-menu="logout">Log out</a></li>
+        </ul>
+    </span>
+</t>
+
+<t t-name="WebClient">
+    <div class="frame">
+      <div id="menu" class="menu nav-collapse collapse width">
+        <div class="collapse-inner grey">
+          <div class="navbar navbar-inverse" data-spy="affix" data-offset-top="10">
+            <div class="navbar-inner">
+              <i class="icon-folder-open icon-white"> </i> Menu
+            </div>
+          </div>
+          <div class="menu_grey" style="overflow: auto; height:100%;">
+              <div class="oe_user_menu_placeholder"/>
+              <div class="oe_secondary_menus_container2"/>
+          </div>
+        </div>
+      </div>
+      <div class="view">
+        <div class="navbar navbar-inverse" data-spy="affix" data-offset-top="10">
+          <div class="navbar-inner">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#menu">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="nav-collapse collapse">
+                    <div class="oe_menu_placeholder"/>
+                    <div class="oe_systray"/>
+            </div>
+          </div>
+        </div>
+        <div class="oe_application" id="content" style="overflow:auto;">
+        </div>
+      </div>
+    </div>
+    <script src="/web_bootstrap/static/src/bootstrap/js/bootstrap.min.js"></script>
+</t>
+
 <t t-name="Menu.needaction_counter">
-    <div class="badge badge-inverse oe_menu_counter">
+    <div class="badge badge-inverse oe_menu_counter pull-right">
         <t t-if="widget.needaction_counter &gt; 99"> 99+ </t>
         <t t-if="widget.needaction_counter &lt;= 99"> <t t-esc="widget.needaction_counter"/> </t>
+    </div>
+</t>
+
+<t t-name="UserMenu.portal_anonymous">
+    <div class="oe_user_menu oe_topbar_anonymous_login">
+    <a href="#" class="login">
+        <i class="icon-lock"></i>
+        Login
+    </a>
     </div>
 </t>
 
