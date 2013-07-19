@@ -10,6 +10,9 @@ label {
     text-shadow: none;
 }
 
+.openerp .oe_application {
+  height: 95%;
+}
 .openerp .oe_application .label a {
     color: white;
 }
@@ -46,7 +49,6 @@ label {
     width: 200px;
 }
 
-
 .openerp .oe_form .oe_inline {
     width: auto;
 }
@@ -63,9 +65,9 @@ label {
     color:white;
 }
 
-.openerp .oe_application .btn {
+/* .openerp .oe_application .btn {
     color:white;
-}
+}*/
 
 .ui-autocomplete {
     font-family: 'Ubuntu', sans-serif;
@@ -278,19 +280,12 @@ body .openerp .menu_grey  {
 }
 
 
+
 .openerp .oe_secondary_menus_container2 a{
   color: white;
 }
 
-.openerp .oe_secondary_menus_container2 a:hover{
-  color: black;
-}
 
-.openerp li.oe_secondary_menu_section2 > a {
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
-  margin-bottom: 5px;
-}
 
 li.oe_secondary_menu_subsection2 {
   background-color: invisible;
@@ -302,7 +297,9 @@ li.oe_secondary_menu_subsection2 {
   padding: 0px;
 }
 
-.openerp .oe_secondary_submenu2 .oe_active, .openerp .oe_secondary_menu_section2 > a{
+/*.openerp .oe_secondary_submenu2 > li:hover */
+
+.openerp .oe_secondary_submenu2 .oe_active, .openerp li.oe_secondary_menu_section2 > a{
     background: #232327;
     background: rgba(0, 0, 0, 0.5);
     border: 0px solid lightGrey;
@@ -312,4 +309,38 @@ li.oe_secondary_menu_subsection2 {
     padding-top: 2px;
     padding-bottom: 5px;
     color: white;
+}
+
+li.oe_secondary_menu_section2 li:hover {
+    background: #232327;
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+li.oe_secondary_menu_section2 a:hover {
+    background: #232327;
+    background: rgba(0, 0, 0, 0.5);
+    color: #c8ff00;
+}
+
+li.oe_secondary_menu_subsection2.opened {
+  background: #232327;
+  background: rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 0 3px black;
+  -webkit-box-shadow: inset 0 0 3px black;
+  box-shadow: inset 0 0 3px black;
+}
+
+li.oe_secondary_menu_subsection2.opened > a {
+  color: #c8ff00;
+  background: #232327;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.oe_secondary_menu2 .nav-list > li > a {
+  text-shadow: none;
+}
+
+.oe_secondary_menus_container2 {
+  margin-top: 15px;
 }

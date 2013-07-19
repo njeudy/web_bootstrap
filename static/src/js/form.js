@@ -32,7 +32,7 @@ openerp.web_bootstrap = function (oe) {
           //NJEUDY: remove onclick action
           //this.$secondary_menus.on('click', 'a[data-menu]', this.on_menu_click);
 
-          //return this.do_reload();
+          return this.do_reload();
       },
 
       menu_loaded: function(data) {
@@ -89,11 +89,13 @@ openerp.web_bootstrap = function (oe) {
 
         // Activate current menu item and show parents
         this.$secondary_menus.find('.oe_active').removeClass('oe_active');
+        this.$secondary_menus.find('.opened').removeClass('opened');
         if ($main_menu !== $clicked_menu) {
             $clicked_panel_menu.parents().show();
             //$clicked_panel_menu.parents('ul').find('.collapse').removeClass('in');
             //$clicked_panel_menu.siblings('ul').addClass('collapse in');
-            $clicked_panel_menu.parents('ul').addClass('in');
+            $clicked_panel_menu.parents('ul').addClass('in opened');
+            $clicked_panel_menu.parents('li').addClass('opened');
             $clicked_menu.parent().addClass('oe_active');
         }
     },
