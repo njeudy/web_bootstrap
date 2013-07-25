@@ -12,6 +12,7 @@
     "css": [
         'static/src/bootstrap/css/bootstrap.css',
         'static/src/bootstrap/css/bootstrap-responsive.min.css',
+        'static/src/font-awesome/css/font-awesome.min.css',
         'static/src/css/base.css',
     ],
     "js": [
