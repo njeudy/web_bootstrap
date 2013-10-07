@@ -430,3 +430,7 @@ background-color: #f0f0f0;
 -o-box-shadow: 0px 1px 2px 0px #656565;
 box-shadow: 0px 1px 2px 0px #656565;
 }
+
+.openerp .oe_form_editable .oe_read_only, .openerp .oe_form_editable .oe_form_field:empty {
+  display: none !important;
+}
