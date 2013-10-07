@@ -46,7 +46,7 @@ label {
 }
 
 .openerp .oe_followers {
-    width: 200px;
+    width: 200px !important;
 }
 
 .openerp .oe_form .oe_inline {
@@ -58,7 +58,7 @@ label {
 }
 
 .openerp .oe_record_thread {
-    margin-right: 252px;
+    margin-right: 252px !important;
 }
 
 .openerp .oe_secondary_submenu .oe_menu_toggler:before {
