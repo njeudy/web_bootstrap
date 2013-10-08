@@ -6,6 +6,9 @@ label {
   
 }
 
+li.dropdown_btn {
+    margin: 3px;
+}
 .openerp {
     text-shadow: none;
 }
