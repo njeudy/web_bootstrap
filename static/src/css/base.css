@@ -440,5 +440,13 @@ box-shadow: 0px 1px 2px 0px #656565;
 
 .openerp .oe_application a.btn {
 color:white;
+}
 
+.openerp .oe_fileupload .oe_add input.oe_form_binary_file {
+display: inline-block;
+margin-left: 0px;
+height: 22px;
+width: 152px;
+margin-top: -50px;
+cursor: pointer;
 }
