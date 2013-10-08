@@ -1501,7 +1501,7 @@
 
   var Button = function (element, options) {
     this.$element = $(element)
-    this.options = $.extend({}, $.fn.button.defaults, options)
+    this.options = $.extend({}, $.fn.bsbutton.defaults, options)
   }
 
   Button.prototype.setState = function (state) {
@@ -1537,9 +1537,9 @@
  /* BUTTON PLUGIN DEFINITION
   * ======================== */
 
-  var old = $.fn.button
+  var old = $.fn.bsbutton
 
-  $.fn.button = function (option) {
+  $.fn.bsbutton = function (option) {
     return this.each(function () {
       var $this = $(this)
         , data = $this.data('button')
@@ -1550,18 +1550,18 @@
     })
   }
 
-  $.fn.button.defaults = {
+  $.fn.bsbutton.defaults = {
     loadingText: 'loading...'
   }
 
-  $.fn.button.Constructor = Button
+  $.fn.bsbutton.Constructor = Button
 
 
  /* BUTTON NO CONFLICT
   * ================== */
 
-  $.fn.button.noConflict = function () {
-    $.fn.button = old
+  $.fn.bsbutton.noConflict = function () {
+    $.fn.bsbutton = old
     return this
   }
 
@@ -1572,7 +1572,7 @@
   $(document).on('click.button.data-api', '[data-toggle^=button]', function (e) {
     var $btn = $(e.target)
     if (!$btn.hasClass('btn')) $btn = $btn.closest('.btn')
-    $btn.button('toggle')
+    $btn.bsbutton('toggle')
   })
 
 }(window.jQuery);

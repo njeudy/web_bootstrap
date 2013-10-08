@@ -16,7 +16,7 @@
         'static/src/css/base.css',
     ],
     "js": [
-#        'static/src/bootstrap/js/bootstrap.min.js',
+        #'static/src/bootstrap/js/bootstrap.js',
         'static/src/bootstrap/js/holder.js',
         'static/src/js/form.js',
     ],
