@@ -450,3 +450,20 @@ width: 152px;
 margin-top: -50px;
 cursor: pointer;
 }
+
+.openerp .oe_button.oe_link.white  span {
+border: none;
+padding: 0;
+margin: 0;
+background: none;
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+border-radius: 0;
+text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+-moz-box-shadow: none;
+-webkit-box-shadow: none;
+box-shadow: none;
+font-size: 14px;
+color: white;
+font-weight: normal;
+}
